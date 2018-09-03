@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Добро пожаловать</title>
+        <h:outputStylesheet library="css" name="style_index.css"  />
+    </h:head>
+    <h:body>
+
+        <div class="main">
+
+            <div class="content">
+                <p class="title"><h:graphicImage library="images" name="lib.png" /></p>
+                <p class="title">Добро пожаловать на страницу</p>
+            </div>
+
+            <div class="login_div">
+                <p class="title">Библиотека</p>
+
+                <h:form styleClass="login_form">
+                    Имя: <h:inputText id="username" value="#{user.username}" required="true" requiredMessage="Должно быть больше 5">
+                        <f:validator validatorId="validators.LoginValidator"/>
+                    </h:inputText>
+                    <h:commandButton action="pages/books?faces-redirect=true" value="Войти"/>
+                    <p><h:message for="username" styleClass="error"/></p>
+                </h:form>
+
+            </div>
+
+            <div class="footer">
+               Онлайн библиотека
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

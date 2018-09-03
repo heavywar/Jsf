@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hbmdl.auto">create-drop</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/bydb</property>
+    <property name="hibernate.show_sql">true</property>
+    <!--<property name="hibernate.connection.datasource">bydb</property>-->
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="entity.AuthorEntity"/>
+      <mapping class="entity.getSessionHibernate"/>
+    <mapping class="entity.BookEntity"/>
+    <mapping class="entity.GenreEntity"/>
+    <mapping class="entity.GroupsEntity"/>
+    <mapping class="entity.PublisherEntity"/>
+    <mapping class="entity.TestEntity"/>
+    <mapping resource="nls/AuthorEntity.hbm.xml"/>
+    <mapping class="nls.AuthorEntity"/>
+    <mapping class="nls.BookEntity"/>
+    <mapping resource="nls/BookEntity.hbm.xml"/>
+    <mapping resource="nls/GenreEntity.hbm.xml"/>
+    <mapping class="nls.GenreEntity"/>
+    <mapping resource="nls/GroupsEntity.hbm.xml"/>
+    <mapping class="nls.GroupsEntity"/>
+    <mapping class="nls.PublisherEntity"/>
+    <mapping resource="nls/PublisherEntity.hbm.xml"/>
+    <mapping resource="nls/SequenceEntity.hbm.xml"/>
+    <mapping class="nls.SequenceEntity"/>
+    <mapping resource="nls/TestEntity.hbm.xml"/>
+    <mapping class="nls.TestEntity"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
